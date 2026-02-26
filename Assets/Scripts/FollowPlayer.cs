@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class FollowPlayer : MonoBehaviour
 {
-
-    public Rigidbody rb;
-
+    public Transform player;
+    public Vector3 offset;
 
     // Update is called once per frame
     void Update()
     {
-        rb.AddForce (0,0,2000 * Time.deltaTime);
+        transform.position = player.position + offset;
     }
 }
